@@ -1,4 +1,5 @@
 import { useDuckDB } from "@/lib/useDuckDB";
+import { useHashRoute } from "@/lib/useHashRoute";
 import { FiltersProvider } from "@/state/filters";
 import { Header } from "./components/Header";
 import { FilterBar } from "./components/FilterBar";
@@ -7,9 +8,28 @@ import { ChartsTop, ChartsMid } from "./components/Charts";
 import { HierarchyTable } from "./components/HierarchyTable";
 import { BottomBars } from "./components/BottomBars";
 import { Section } from "./components/Card";
+import { PlanoAcao } from "./components/plano/PlanoAcao";
 import { Loader2 } from "lucide-react";
 
 export function App() {
+  const [route] = useHashRoute("");
+  const isPlano = route.startsWith("plano");
+
+  // Plano não depende de DuckDB
+  if (isPlano) {
+    return (
+      <>
+        <Header bootMs={null} rowCount={null} activeRoute="plano" />
+        <PlanoAcao />
+      </>
+    );
+  }
+
+  // Dash padrão (precisa do DuckDB)
+  return <DashRoute />;
+}
+
+function DashRoute() {
   const { ready, error, bootMs, rowCount } = useDuckDB();
 
   if (!ready) {
@@ -32,7 +52,7 @@ export function App() {
 
   return (
     <FiltersProvider>
-      <Header bootMs={bootMs} rowCount={rowCount} />
+      <Header bootMs={bootMs} rowCount={rowCount} activeRoute="dash" />
       <FilterBar />
       <main className="max-w-[1600px] mx-auto px-6 py-6 space-y-6">
         <Section>

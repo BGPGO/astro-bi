@@ -25,5 +25,6 @@ dist-ssr
 
 # Screenshots / debug
 _screens
+_committee_*.json
 .env
 .env.local
