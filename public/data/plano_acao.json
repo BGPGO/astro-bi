@@ -509,6 +509,42 @@
       "responsavel_sugerido": "Filipe (Bitrix) + Vítor (escalação) + Thomas (auditoria técnica)",
       "kpi_alvo": "Todos os projetos com cronograma atualizado no Bitrix em 14 dias",
       "prazo_dias": 14
+    },
+    {
+      "id": "A15",
+      "titulo": "Norte (AC/AM/AP/PA/RO/RR/TO): manter com regras de margem, NÃO cortar",
+      "tema": "comercial",
+      "prioridade": 15,
+      "severidade": "media",
+      "esforco": "baixo",
+      "impacto_score": 4,
+      "esforco_score": 2,
+      "impacto_anual_brl": 40000,
+      "tipo_impacto": "anual",
+      "diagnostico": {
+        "headline": "Norte é 1,12% da receita (R$ 388k/ano) e tem margem bruta 38,8% — MAIOR que SP (32%). Cortar destrói R$ 100-130k/ano de margem operacional sem ganho compensatório",
+        "detalhe": "420 pedidos/ano em 7 UFs. PA lidera (R$ 172k), RO (R$ 94k), AM (R$ 56k), TO (R$ 33k), AC (R$ 18k), AP (R$ 11k), RR (R$ 1k). Ticket médio R$ 600-1.400 (vs SP R$ 882). 73% da receita é PJ (LTV R$ 2.362, ticket R$ 1.350). Frete cobrado médio R$ 62-226 (cliente Norte já paga frete — diferente do RJ subsidiado). Norte Remoto puro (AC+AM+AP+RR) é apenas 88 pedidos/ano e R$ 87k — cortar é simbólico, não econômico. O problema real é cancelamento 20,2% (vs SP 14%) — 85 pedidos cancelados/ano que são pura perda operacional (provável causa: estoque sistêmico ≠ físico, ligado a A06 e A05).",
+        "numero_principal": "R$ 388k (1,1%) | margem 38,8% > SP | cancel 20%",
+        "fonte_quant": ["vendas_tiny_bu.parquet (análise UF jan-mai/26)"]
+      },
+      "evidencia_reuniao": {
+        "data": "n/a",
+        "quem": "Vítor (pedido pontual 21/05/2026)",
+        "fala": "Pergunta exploratória: faz sentido deixar de vender para Acre/Roraima/Amazonas? Análise mostrou que cortar destrói margem em vez de proteger.",
+        "contexto_caso": "Hipótese inicial era de que Norte seria 'cauda tóxica'. Dados contradizem: cliente Norte é PJ que recompra, paga frete alto, ticket alto, margem maior. Problema é operacional (cancelamento), não comercial."
+      },
+      "hipotese": "Cliente Norte é PJ de obra/indústria com pouca opção local de EPI — paga o que custar. Quem reclama é o cliente PF curioso (160 pedidos, 27% da receita Norte, LTV R$ 986). Cortar elimina o bom junto com o ruim.",
+      "recomendacao": [
+        "NÃO cortar Norte. Mesmo Norte Remoto (AC/AM/AP/RR) é só R$ 87k, não vale o gesto.",
+        "Aplicar piso R$ 500 ao Norte (igual A02 global) — perde só R$ 5k mas elimina cauda <R$ 200.",
+        "Bloquear boleto no Norte Remoto (AC/AM/AP/RR) — boleto cancela 18-23%, crédito menos.",
+        "Pedir ao Filipe levantar CSV de custo de frete real do Norte (igual fez pro RJ) — validar se há subsídio escondido em pedidos >R$ 1.000.",
+        "Zero mídia paga pra UFs Norte (não rodar Pmax). Pedido espontâneo é bem-vindo, mas CAC não compensa LTV nessas UFs.",
+        "Atacar cancelamento 20,2% — auditar estoque sistêmico vs físico (ligado a A05/A06). Reduzir pra 14% (média Astro) recupera ~R$ 30-50k/ano."
+      ],
+      "responsavel_sugerido": "Filipe (validação frete real + regras) + Zinho (config checkout)",
+      "kpi_alvo": "Cancelamento Norte <15% em 90 dias (hoje 20,2%); zero mídia paga Norte",
+      "prazo_dias": 45
     }
   ]
 }
