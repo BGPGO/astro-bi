@@ -1,0 +1,47 @@
+.bi-dashboard-theme {
+  /* === BGP GO BI tokens — molde aprovado (dark cyan-tech) === */
+  --bi-bg: 200 33% 3%;            /* #05080a */
+  --bi-bg-1: 207 27% 5%;
+  --bi-surface: 207 27% 7%;
+  --bi-surface-2: 207 24% 9%;
+  --bi-surface-3: 200 22% 12%;
+
+  --bi-border: 200 24% 13%;
+  --bi-border-2: 207 21% 18%;
+
+  --bi-text: 0 0% 100%;
+  --bi-text-2: 207 9% 75%;
+  --bi-muted: 209 9% 46%;
+  --bi-muted-2: 205 10% 26%;
+
+  --bi-primary: 187 85% 53%;             /* #22d3ee */
+  --bi-primary-foreground: 200 80% 6%;
+  --bi-cyan: 187 85% 53%;
+  --bi-cyan-2: 187 92% 69%;
+  --bi-cyan-3: 187 96% 82%;
+  --bi-cyan-dim: 191 86% 26%;
+
+  --bi-green: 161 84% 39%;
+  --bi-green-2: 156 71% 52%;
+  --bi-green-3: 156 72% 67%;
+  --bi-red: 0 84% 60%;
+  --bi-red-2: 0 91% 71%;
+  --bi-red-3: 0 94% 82%;
+  --bi-amber: 38 92% 50%;
+  --bi-violet: 250 89% 76%;
+
+  --bi-secondary: 187 85% 53%;
+  --bi-secondary-foreground: 200 80% 6%;
+  --bi-accent: 187 30% 12%;
+
+  --bi-chart-1: 187 85% 53%;
+  --bi-chart-2: 161 84% 39%;
+  --bi-chart-3: 0 84% 60%;
+  --bi-chart-4: 38 92% 50%;
+  --bi-chart-5: 250 89% 76%;
+  --bi-chart-6: 156 71% 52%;
+
+  background: hsl(var(--bi-bg));
+  color: hsl(var(--bi-text));
+  font-family: 'Geist', 'Inter', system-ui, sans-serif;
+}

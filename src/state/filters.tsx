@@ -13,7 +13,7 @@ export interface Filters {
 }
 
 const DEFAULT: Filters = {
-  anoMes: [],          // se vazio = todos
+  anoMes: [],
   diaUtil: "all",
   marca: [],
   categoria: [],
@@ -27,7 +27,7 @@ interface Ctx {
   f: Filters;
   setF: (patch: Partial<Filters>) => void;
   reset: () => void;
-  whereSQL: string; // expressao SQL pronta pro WHERE (sem o WHERE)
+  whereSQL: string;
   hasActive: boolean;
 }
 
